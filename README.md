@@ -1,73 +1,114 @@
-# React + TypeScript + Vite
+# SmartRent - Rental Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SmartRent** is a modern rental platform where users can browse, rent, and list items across multiple categories. Built with React, TypeScript, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎯 Browse items across multiple categories (Music, Decoration, Sports, Uni Items, Video, Other)
+- 🔍 Real-time search functionality
+- 📱 Fully responsive design with mobile-first approach
+- 🎨 Modern dark theme with gradient accents
+- 🔐 User authentication pages (Sign In/Sign Up)
+- 📝 List your own items for rent
+- 🎭 Category-specific detail pages with filtering
+- ⚡ Fast and optimized with Vite
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **React 18** - UI Library
+- **TypeScript** - Type Safety
+- **Vite** - Build Tool & Dev Server
+- **React Router DOM** - Client-side routing
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icon Library
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 16+ and npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd Smart-Rent
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available Routes
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `/` - Home page with hero section and categories
+- `/browse` - Browse all categories
+- `/category/:categoryId` - Category detail pages
+  - `/category/music` - Music instruments and gear
+  - `/category/decoration` - Event decor and furniture
+  - `/category/sports` - Sporting equipment
+  - `/category/uni` - University items
+  - `/category/video` - Video and camera equipment
+  - `/category/other` - Other rental items
+- `/list-item` - List a new item for rent
+- `/how-it-works` - Platform information
+- `/signin` - User sign in
+- `/signup` - User registration
+
+## Project Structure
+
 ```
+Smart-Rent/
+├── src/
+│   ├── assets/         # Images and static files
+│   ├── components/     # Reusable components
+│   │   ├── CategoryCard.tsx
+│   │   ├── CategoryGrid.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   └── Hero.tsx
+│   ├── pages/          # Page components
+│   │   ├── Browse.tsx
+│   │   ├── CategoryDetail.tsx
+│   │   ├── Home.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── ListItem.tsx
+│   │   ├── SignIn.tsx
+│   │   └── SignUp.tsx
+│   ├── App.tsx         # Main app component with routes
+│   ├── main.tsx        # Entry point
+│   └── index.css       # Global styles
+├── public/             # Public assets
+└── package.json
+```
+
+## Scripts
+
+```bash
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint code
+npm run lint
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the MIT License.
