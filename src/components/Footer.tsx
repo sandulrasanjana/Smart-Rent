@@ -1,4 +1,5 @@
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 
 export default function Footer() {
@@ -9,7 +10,7 @@ export default function Footer() {
                     <div className="space-y-4">
 
                         {/* Logo section */}
-                        <a href="#" className="flex items-center gap-3">
+                        <Link to="/" className="flex items-center gap-3">
                             <img
                                 src={logo}
                                 alt="SmartRent logo"
@@ -18,7 +19,7 @@ export default function Footer() {
                                 width={112}
                                 height={112}
                             />
-                        </a>
+                        </Link>
 
                         <p className="text-neutral-400 text-sm leading-relaxed">
                             Your trusted platform for renting anything you need. Simple, secure, and sustainable.
@@ -28,20 +29,21 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-medium mb-4">Categories</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Music</a></li>
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Decoration</a></li>
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Sports</a></li>
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Uni Items</a></li>
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Other Items</a></li>
+                            <li><Link to="/category/music" className="text-neutral-400 hover:text-white text-sm transition-colors">Music</Link></li>
+                            <li><Link to="/category/decoration" className="text-neutral-400 hover:text-white text-sm transition-colors">Decoration</Link></li>
+                            <li><Link to="/category/sports" className="text-neutral-400 hover:text-white text-sm transition-colors">Sports</Link></li>
+                            <li><Link to="/category/uni" className="text-neutral-400 hover:text-white text-sm transition-colors">Uni Items</Link></li>
+                            <li><Link to="/category/video" className="text-neutral-400 hover:text-white text-sm transition-colors">Video</Link></li>
+                            <li><Link to="/category/other" className="text-neutral-400 hover:text-white text-sm transition-colors">Other Items</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="text-white font-medium mb-4">Company</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">About Us</a></li>
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">How it Works</a></li>
-                            <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Pricing</a></li>
+                            <li><Link to="/browse" className="text-neutral-400 hover:text-white text-sm transition-colors">Browse</Link></li>
+                            <li><Link to="/how-it-works" className="text-neutral-400 hover:text-white text-sm transition-colors">How it Works</Link></li>
+                            <li><Link to="/list-item" className="text-neutral-400 hover:text-white text-sm transition-colors">List Item</Link></li>
                             <li><a href="#" className="text-neutral-400 hover:text-white text-sm transition-colors">Contact</a></li>
                         </ul>
                     </div>

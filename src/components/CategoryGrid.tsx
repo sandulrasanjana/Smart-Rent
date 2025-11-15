@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Music, Lamp, Trophy, GraduationCap, Package } from 'lucide-react';
+import { Music, Lamp, Trophy, GraduationCap, Package, Video } from 'lucide-react';
 import CategoryCard from './CategoryCard';
 
 interface CategoryGridProps {
@@ -43,6 +43,15 @@ export default function CategoryGrid({ searchQuery }: CategoryGridProps) {
             itemCount: 156,
             gradient: 'from-blue-500 to-cyan-500',
             bgGradient: 'from-blue-500/10 to-cyan-500/10',
+        },
+        {
+            id: 'video',
+            title: 'Video',
+            description: 'Cameras, lighting equipment, and video production gear',
+            icon: Video,
+            itemCount: 198,
+            gradient: 'from-purple-500 to-indigo-500',
+            bgGradient: 'from-purple-500/10 to-indigo-500/10',
         },
         {
             id: 'other',
