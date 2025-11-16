@@ -1,4 +1,4 @@
-/* .preloader-overlay {
+.preloader-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,4 +15,4 @@
 .preloader-player {
   width: 200px;
   height: 200px;
-} */
+}
