@@ -63,16 +63,16 @@ export default function Footer() {
                         © 2025 SmartRent. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4">
-                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg flex items-center justify-center transition-colors">
+                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-700 border border-neutral-800 rounded-3xl flex items-center justify-center transition-colors">
                             <Twitter className="w-4 h-4 text-neutral-400" />
                         </a>
-                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg flex items-center justify-center transition-colors">
+                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-700 border border-neutral-800 rounded-3xl flex items-center justify-center transition-colors">
                             <Github className="w-4 h-4 text-neutral-400" />
                         </a>
-                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg flex items-center justify-center transition-colors">
+                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-700 border border-neutral-800 rounded-3xl flex items-center justify-center transition-colors">
                             <Linkedin className="w-4 h-4 text-neutral-400" />
                         </a>
-                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg flex items-center justify-center transition-colors">
+                        <a href="#" className="w-9 h-9 bg-neutral-900 hover:bg-neutral-700 border border-neutral-800 rounded-3xl flex items-center justify-center transition-colors">
                             <Mail className="w-4 h-4 text-neutral-400" />
                         </a>
                     </div>
