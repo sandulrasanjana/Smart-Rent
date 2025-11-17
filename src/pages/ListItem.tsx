@@ -37,6 +37,7 @@ export default function ListItem() {
                                 <select className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50">
                                     <option>Select a category</option>
                                     <option>Music</option>
+                                    <option>Video</option>
                                     <option>Decoration</option>
                                     <option>Sports</option>
                                     <option>Uni Items</option>

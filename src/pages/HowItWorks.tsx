@@ -2,6 +2,10 @@ import { Search, MessageCircle, Package, Shield, CreditCard, ThumbsUp } from 'lu
 import { Link } from 'react-router-dom';
 
 export default function HowItWorks() {
+    const handleLinkClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     const steps = [
         {
             icon: Search,
@@ -149,10 +153,10 @@ export default function HowItWorks() {
                         Join thousands of users who are already renting and earning on SmartRent
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link to="/browse" className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-medium hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-lg shadow-emerald-500/20">
+                        <Link to="/browse" onClick={handleLinkClick} className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg font-medium hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-lg shadow-emerald-500/20">
                             Browse Items
                         </Link>
-                        <Link to="/list-item" className="px-8 py-3 bg-neutral-900 text-white rounded-lg font-medium hover:bg-neutral-800 transition-all border border-neutral-800">
+                        <Link to="/list-item" onClick={handleLinkClick} className="px-8 py-3 bg-neutral-900 text-white rounded-lg font-medium hover:bg-neutral-800 transition-all border border-neutral-800">
                             List Your Item
                         </Link>
                     </div>
