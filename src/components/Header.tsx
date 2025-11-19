@@ -1,6 +1,6 @@
 import { Search, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 interface HeaderProps {
@@ -10,6 +10,18 @@ interface HeaderProps {
 
 export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && searchQuery.trim()) {
+            navigate('/search');
+        }
+    };
+
+    const handleLinkClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setMobileMenuOpen(false);
+    };
 
     return (
         <header className="sticky top-0 z-50 bg-transparent">
@@ -19,7 +31,7 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
                     <div className="flex items-center justify-between h-20 sm:h-24 px-5 sm:px-8">
 
                         {/* Logo section */}
-                        <Link to="/" className="flex items-center gap-3">
+                        <Link to="/" onClick={handleLinkClick} className="flex items-center gap-3">
                             <img
                                 src={logo}
                                 alt="SmartRent logo"
@@ -32,9 +44,10 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
 
                         {/* Middle: Nav links (desktop) */}
                         <div className="hidden md:flex items-center gap-6">
-                            <Link to="/browse" className="text-neutral-300 hover:text-white transition-colors text-lg font-medium">Browse</Link>
-                            <Link to="/list-item" className="text-neutral-300 hover:text-white transition-colors text-lg font-medium">List Item</Link>
-                            <Link to="/how-it-works" className="text-neutral-300 hover:text-white transition-colors text-lg font-medium">How it Works</Link>
+                            <Link to="/browse" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-md font-medium">Browse</Link>
+                            <Link to="/list-item" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-md font-medium">List Item</Link>
+                            <Link to="/how-it-works" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-md font-medium">How it Works</Link>
+                            <Link to="/contact" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-md font-medium">Contact Us</Link>
                         </div>
 
                         {/* Right: Search + Actions (desktop) */}
@@ -47,14 +60,15 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
                                     placeholder="Search items..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
+                                    onKeyDown={handleSearchKeyDown}
                                     className="w-64 bg-neutral-900 border border-neutral-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all"
                                 />
                             </div>
-                            <Link to="/signin"
+                            <Link to="/signin" onClick={handleLinkClick}
                                 className="px-3 py-2 text-lg font-medium  text-neutral-300 hover:text-white transition-colors">
                                 Sign In
                             </Link>
-                            <Link to="/signup" className="px-3 py-2 text-lg font-medium bg-transparent border border-[#4ECDC4] text-neutral-300 rounded-xl hover:bg-[#4ECDC4] hover:text-white transition-colors duration-300 ease-in-out">
+                            <Link to="/signup" onClick={handleLinkClick} className="px-3 py-2 text-lg font-medium bg-transparent border border-[#4ECDC4] text-neutral-300 rounded-xl hover:bg-[#4ECDC4] hover:text-white transition-colors duration-300 ease-in-out">
                                 Get Started
                             </Link>
 
@@ -84,17 +98,18 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
                                         placeholder="Search items..."
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
+                                        onKeyDown={handleSearchKeyDown}
                                         className="w-full bg-neutral-900 border border-neutral-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
                                     />
                                 </div>
-                                <Link to="/browse" className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">Browse</Link>
-                                <Link to="/list-item" className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">List Item</Link>
-                                <Link to="/how-it-works" className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">How it Works</Link>
+                                <Link to="/browse" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">Browse</Link>
+                                <Link to="/list-item" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">List Item</Link>
+                                <Link to="/how-it-works" onClick={handleLinkClick} className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">How it Works</Link>
                                 <div className="flex gap-2 pt-2">
-                                    <Link to="/signin" className="flex-1 px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white transition-colors border border-neutral-800 rounded-lg text-center">
+                                    <Link to="/signin" onClick={handleLinkClick} className="flex-1 px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white transition-colors border border-neutral-800 rounded-lg text-center">
                                         Sign In
                                     </Link>
-                                    <Link to="/signup" className="flex-1 px-4 py-2 text-sm font-medium bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg hover:from-emerald-600 hover:to-cyan-600 transition-all text-center">
+                                    <Link to="/signup" onClick={handleLinkClick} className="flex-1 px-4 py-2 text-sm font-medium bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-lg hover:from-emerald-600 hover:to-cyan-600 transition-all text-center">
                                         Get Started
                                     </Link>
                                 </div>
