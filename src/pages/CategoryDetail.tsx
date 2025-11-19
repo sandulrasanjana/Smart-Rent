@@ -491,7 +491,7 @@ export default function CategoryDetail() {
                                 </div>
                                 <div className="flex items-center justify-between pt-2 border-t border-neutral-800">
                                     <div className="text-white font-semibold">
-                                        Rs.{item.price}.00
+                                        Rs.{item.price}/=
                                         <span className="text-neutral-400 text-sm font-normal">/day</span>
                                     </div>
                                     {item.available && (
